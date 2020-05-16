@@ -1,8 +1,8 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import Hello from './hello'
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
 
 ReactDOM.render(
-  <Hello name='react' onChange={name => console.log(name)}/>,
+  <Hello/>,
   document.body
 )

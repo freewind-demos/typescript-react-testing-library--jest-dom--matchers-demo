@@ -1,24 +1,9 @@
-//import * as React from 'react'
-import React, {useState} from 'react'
+import React from 'react'
 
-type Props = {
-  name: string
-  onChange: (value: string) => void
-}
-
-export default function Hello(props: Props) {
-
-  const [name, setName] = useState(props.name)
-
-  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const value = event.currentTarget.value;
-    setName(value);
-    props.onChange(value);
-  }
-
+export default function Hello() {
   return <div>
     <div>Hello, {name}</div>
-    <input type='text' value={name} onChange={onChange}/>
+    <input type='checkbox' checked onChange={() => undefined}/>
   </div>
 };
 

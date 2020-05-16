@@ -1,16 +1,13 @@
 import React from 'react';
-import {render, fireEvent} from "@testing-library/react";
+import {render} from "@testing-library/react";
 import Hello from "./hello";
-
 
 describe('Hello', () => {
   test('handle onChange', () => {
-    const mockOnChange = jest.fn()
-    const wrapper = render(<Hello name='typescript' onChange={mockOnChange}/>)
-    const inputNode = wrapper.container.querySelector('input')!
+    const {container} = render(<Hello/>)
 
-    fireEvent.change(inputNode, {target: {value: 'react'}});
-
-    expect(mockOnChange).toHaveBeenCalledWith('react');
+    const checkbox = container.querySelector<HTMLInputElement>('input[type=checkbox]')
+    expect(checkbox).toBeChecked();
+    expect(checkbox).toBeInTheDocument();
   });
 })

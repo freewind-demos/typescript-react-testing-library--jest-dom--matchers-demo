@@ -1,9 +1,15 @@
-TypeScript React "react-testing-library" Demo
+TypeScript React "react-testing-library" jest-dom Matchers Demo
 =============================================
 
-如何使用jest和`react-testing-library`来测试react component的行为。
+关键是:
 
-`react-testing-library`已经迁移到`@testing-library/react`
+```
+setupFilesAfterEnv: [
+  '@testing-library/jest-dom',
+]
+```
+
+注意：旧版本的@testing-library/jest-dom好像不能这么写，比较麻烦
 
 ```
 npm install
